@@ -1,16 +1,42 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Login</title>
-</head>
+<html lang="en" ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width" />
+        <title ng-bind="'Anthem - ' + $root.title"></title>
+
+
+        <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyDBzovYIYMi3DsxslZKlxR4aoKqM-FTiGc",
+            authDomain: "worm-8b3f0.firebaseapp.com",
+            databaseURL: "https://worm-8b3f0.firebaseio.com",
+            projectId: "worm-8b3f0",
+            storageBucket: "worm-8b3f0.appspot.com",
+            messagingSenderId: "7675553025"
+          };
+          // firebase.initializeApp(config);
+          // var database = firebase.database();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <!-- Angular -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-route.min.js"></script>
+        <script src="/static/js/app.js"></script>
+        <script src="/static/js/controllers.js"></script>
+        <script src="/static/js/directives.js"></script>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+
     <body>
-        <h1>Login page</h1>
-        <form>
-            Username:<br>
-            <input type="text" name="firstname"><br>
-            Password:<br>
-            <input type="password" name="lastname">
-        </form>
+        <div ng-view class="ng-cloak" style="min-width: 960px; margin: 0 auto;"></div>
     </body>
 </html>
