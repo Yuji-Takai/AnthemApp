@@ -2,27 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Login</title>
-    <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
-    <script>
-        var firebase = require('firebase');
-        var firebaseui = require('firebaseui');
-        var app = firebase.initializeApp({
-          apiKey: '<your-api-key>',
-          authDomain: '<your-auth-domain>',
-          databaseURL: '<your-database-url>',
-          storageBucket: '<your-storage-bucket>',
-          messagingSenderId: '<your-sender-id>'
-        });
-        ui.start('#firebaseui-auth-container', {
-          signInOptions: [
-            firebase.auth.EmailAuthProvider.PROVIDER_ID
-          ],
-          // Other config options...
-        });
-    </script>
-</head>
+        <title>Login</title>
+        <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+    </head>
     <body>
         <h1>Login page</h1>
         <form>
