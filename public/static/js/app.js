@@ -11,7 +11,7 @@ myApp.config(['$routeProvider',
         $routeProvider.
             when('/', {
                 templateUrl: '../static/partials/login.html',
-                controller: 'initialController',
+                controller: 'LogInController',
                 title: 'Home',
             }).
             when('/login', {
@@ -28,6 +28,11 @@ myApp.config(['$routeProvider',
                 templateUrl: '../static/partials/login.html',
                 controller: 'RegisterController',
                 title: 'Create an Account',
+            }).
+            when('/score', {
+                templateUrl: '../static/partials/score.html',
+                controller: 'LogInController',
+                title: 'Game?',
             }).
             // when('/dash', {
             //     templateUrl: '../static/partials/dash.html',

@@ -37,8 +37,10 @@ myApp.controller('RegisterController', function($scope, $location, $http, $log) 
     };
 });
 
-myApp.controller('LogInController', function($rootScope, $scope, $location) {
-
+myApp.controller('LogInController', function($scope, $location) {
+    $scope.redirectToGame = function() {
+        $location.path("/score");
+    };
 });
 
 myApp.controller('LogOutController', function($scope, $location) {

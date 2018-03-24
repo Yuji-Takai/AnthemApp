@@ -163,6 +163,7 @@ limitations under the License.
           if (!emailVerified) {
             document.getElementById('quickstart-verify-email').disabled = false;
           }
+          // redirectToGame();
           // [END_EXCLUDE]
         } else {
           // User is signed out.
@@ -223,6 +224,8 @@ limitations under the License.
           <button class="mdl-button mdl-js-button mdl-button--raised" disabled id="quickstart-verify-email" name="verify-email">Send Email Verification</button>
           &nbsp;&nbsp;&nbsp;
           <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-password-reset" name="verify-email">Send Password Reset Email</button>
+          &nbsp;&nbsp;&nbsp;
+          <button class="mdl-button mdl-js-button mdl-button--raised" ng-click="redirectToGame()"><a href="#!/score">Play game? ;)</a></button>
 
           <!-- Container where we'll display the user details -->
           <div class="quickstart-user-details-container">
