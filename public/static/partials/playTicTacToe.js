@@ -52,41 +52,95 @@ function playTicTacToe(num2) {
             || (elements[0] == elements[3] && elements[3] == elements[6])
             || (elements[0] == elements[4] && elements[4] == elements[8]))) {
         document.getElementById("result").innerHTML = "YOU WIN!";
+        document.getElementById("button11").disabled = true;
+        document.getElementById("button12").disabled = true;
+        document.getElementById("button13").disabled = true;
+        document.getElementById("button21").disabled = true;
+        document.getElementById("button22").disabled = true;
+        document.getElementById("button23").disabled = true;
+        document.getElementById("button31").disabled = true;
+        document.getElementById("button32").disabled = true;
+        document.getElementById("button33").disabled = true;
         return;
     }
     if (elements[1] == image
         && (elements[1] == elements[4] && elements[4] == elements[7])) {
         document.getElementById("result").innerHTML = "YOU WIN!";
+        document.getElementById("button11").disabled = true;
+        document.getElementById("button12").disabled = true;
+        document.getElementById("button13").disabled = true;
+        document.getElementById("button21").disabled = true;
+        document.getElementById("button22").disabled = true;
+        document.getElementById("button23").disabled = true;
+        document.getElementById("button31").disabled = true;
+        document.getElementById("button32").disabled = true;
+        document.getElementById("button33").disabled = true;
         return;
     }
     if (elements[2] == image
         && ((elements[2] == elements[5] && elements[5] == elements[8])
             || (elements[2] == elements[4] && elements[4] == elements[6]))) {
         document.getElementById("result").innerHTML = "YOU WIN!";
+        document.getElementById("button11").disabled = true;
+        document.getElementById("button12").disabled = true;
+        document.getElementById("button13").disabled = true;
+        document.getElementById("button21").disabled = true;
+        document.getElementById("button22").disabled = true;
+        document.getElementById("button23").disabled = true;
+        document.getElementById("button31").disabled = true;
+        document.getElementById("button32").disabled = true;
+        document.getElementById("button33").disabled = true;
         return;
     }
     if (elements[3] == image
         && (elements[3] == elements[4] && elements[4] == elements[5])) {
             document.getElementById("result").innerHTML = "YOU WIN!";
+            document.getElementById("button11").disabled = true;
+            document.getElementById("button12").disabled = true;
+            document.getElementById("button13").disabled = true;
+            document.getElementById("button21").disabled = true;
+            document.getElementById("button22").disabled = true;
+            document.getElementById("button23").disabled = true;
+            document.getElementById("button31").disabled = true;
+            document.getElementById("button32").disabled = true;
+            document.getElementById("button33").disabled = true;
             return;
     }
     if (elements[6] == image
         && (elements[6] == elements[7] && elements[7] == elements[8])) {
             document.getElementById("result").innerHTML = "YOU WIN!";
+            document.getElementById("button11").disabled = true;
+            document.getElementById("button12").disabled = true;
+            document.getElementById("button13").disabled = true;
+            document.getElementById("button21").disabled = true;
+            document.getElementById("button22").disabled = true;
+            document.getElementById("button23").disabled = true;
+            document.getElementById("button31").disabled = true;
+            document.getElementById("button32").disabled = true;
+            document.getElementById("button33").disabled = true;
             return;
     }
     computerPlaying();
     if (document.getElementById("result") != "YOU WIN!" && document.getElementById("result") != "YOU LOSE..." && !elements.includes("white.png")) {
         document.getElementById("result").innerHTML = "IT'S A DRAW!";
+        document.getElementById("button11").disabled = true;
+        document.getElementById("button12").disabled = true;
+        document.getElementById("button13").disabled = true;
+        document.getElementById("button21").disabled = true;
+        document.getElementById("button22").disabled = true;
+        document.getElementById("button23").disabled = true;
+        document.getElementById("button31").disabled = true;
+        document.getElementById("button32").disabled = true;
+        document.getElementById("button33").disabled = true;
+        return;
     }
 }
-playTicTacToe();
 
 function computerPlaying() {
-    var indx = Math.floor(Math.random() * 10);
+    var indx = Math.floor(Math.random() * 9);
     var count = 0;
     while (filled[indx % 9] == true && count < 10) {
-        indx = indx + 1;
+        indx = (indx + 1) % 9;
         count++;
     }
     elements[indx] = "cross.png";
@@ -116,19 +170,70 @@ function computerPlaying() {
             || (elements[0] == elements[3] && elements[3] == elements[6])
             || (elements[0] == elements[4] && elements[4] == elements[8]))) {
                 document.getElementById("result").innerHTML = "YOU LOSE...";
+                document.getElementById("button11").disabled = true;
+                document.getElementById("button12").disabled = true;
+                document.getElementById("button13").disabled = true;
+                document.getElementById("button21").disabled = true;
+                document.getElementById("button22").disabled = true;
+                document.getElementById("button23").disabled = true;
+                document.getElementById("button31").disabled = true;
+                document.getElementById("button32").disabled = true;
+                document.getElementById("button33").disabled = true;
     } else if (elements[1] == "cross.png"
         && (elements[1] == elements[4] && elements[4] == elements[7])) {
                 document.getElementById("result").innerHTML = "YOU LOSE...";
+                document.getElementById("button11").disabled = true;
+                document.getElementById("button12").disabled = true;
+                document.getElementById("button13").disabled = true;
+                document.getElementById("button21").disabled = true;
+                document.getElementById("button22").disabled = true;
+                document.getElementById("button23").disabled = true;
+                document.getElementById("button31").disabled = true;
+                document.getElementById("button32").disabled = true;
+                document.getElementById("button33").disabled = true;
     } else if (elements[2] == "cross.png"
         && ((elements[2] == elements[5] && elements[5] == elements[8])
                 || (elements[2] == elements[4] && elements[4] == elements[6]))) {
             document.getElementById("result").innerHTML = "YOU LOSE...";
+            document.getElementById("button11").disabled = true;
+            document.getElementById("button12").disabled = true;
+            document.getElementById("button13").disabled = true;
+            document.getElementById("button21").disabled = true;
+            document.getElementById("button22").disabled = true;
+            document.getElementById("button23").disabled = true;
+            document.getElementById("button31").disabled = true;
+            document.getElementById("button32").disabled = true;
+            document.getElementById("button33").disabled = true;
     } else if (elements[3] == "cross.png"
         && (elements[3] == elements[4] && elements[4] == elements[5])) {
             document.getElementById("result").innerHTML = "YOU LOSE...";
+            document.getElementById("button11").disabled = true;
+            document.getElementById("button12").disabled = true;
+            document.getElementById("button13").disabled = true;
+            document.getElementById("button21").disabled = true;
+            document.getElementById("button22").disabled = true;
+            document.getElementById("button23").disabled = true;
+            document.getElementById("button31").disabled = true;
+            document.getElementById("button32").disabled = true;
+            document.getElementById("button33").disabled = true;
     } else if (elements[6] == "cross.png"
         && (elements[6] == elements[7] && elements[7] == elements[8])) {
             document.getElementById("result").innerHTML = "YOU LOSE...";
+            document.getElementById("button11").disabled = true;
+            document.getElementById("button12").disabled = true;
+            document.getElementById("button13").disabled = true;
+            document.getElementById("button21").disabled = true;
+            document.getElementById("button22").disabled = true;
+            document.getElementById("button23").disabled = true;
+            document.getElementById("button31").disabled = true;
+            document.getElementById("button32").disabled = true;
+            document.getElementById("button33").disabled = true;
+    }
+}
+
+function nextPage() {
+    if (document.getElementById("result") != null) {
+
     }
 }
 

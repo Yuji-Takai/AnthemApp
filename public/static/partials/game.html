@@ -4,17 +4,22 @@
   h1, p {
     text-align:center;
   }
-  .table {
-    border: 1px solid black;
+  h1 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+  }
+  .table, td {
+    border: 6px solid rgb(0,0,0);
     border-collapse: collapse;
-    margin: 0px;
   }
-  .table2 {
-    margin: 0 0 0 0;
+  .table {
+    width: 400;
+    height: 400;
+    background-color: rgb(0,0,0);
   }
-  td, tr {
-    padding: 0px;
+  .jumper {
+    position: auto;
   }
+
   </style>
   <head>
     <meta charset="utf-8">
@@ -23,7 +28,8 @@
     <script src="playTicTacToe.js"></script>
     <body>
         <h1>TicTacToe</h1>
-        <p>Drag the emoji that corresponds to your answer and try to win!</p>
+        <p>Q1: How are you feeling about your associate experience at Anthem today?<br>
+        Click the emoji corresponding to your answer and try to win the game as quickly as possible!</p>
         <table id="table2" align="center">
             <tr>
                 <td><button id="button1" onclick="imageChoosing(1)"><img src="5_w_hand.png" height="125" width="125" /></button></td>
@@ -33,6 +39,9 @@
                 <td><button id="button5" onclick="imageChoosing(5)"><img src="01_y.png" height="125" width="125" /></button></td>
             </tr>
         </table>
+
+        <canvas id="white space" width="400" height="30"></canvas>
+
         <table id="table" align="center">
             <tr>
                 <td><button id="button11" onclick="playTicTacToe(1)"><img id="r11" src="white.png" height="125" width="125" /></button></td>
@@ -51,5 +60,6 @@
             </tr>
         </table>
         <h1 id="result"></h1>
+        <button id="jumper"><a href="score.html">Next</a></button>
     </body>
 </html>
