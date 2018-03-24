@@ -1,13 +1,44 @@
 <!DOCTYPE html>
 <html>
+  <style>
+  .table {margin: auto;}
+  </style>
   <head>
     <meta charset="utf-8">
     <title>Game</title>
   </head>
+    <script src="playTicTacToe.js"></script>
     <body>
-        <h1>Basketball Game</h1>
-        <p>Drag the emoji that corresponds to your answer and try to score!</p>
-        <canvas id="canvas" width="400" height="400"></canvas>
-        <script src="playBasketball.js"></script>
+        <h1>TicTacToe</h1>
+        <p>Drag the emoji that corresponds to your answer and try to win!</p>
+        <canvas id="canvas" width="377" height="377"></canvas>
+        <table id="table">
+            <tr>
+                <td><button id="button11" onclick="playTicTacToe(1)"><img id="r11" src="white.png" height="125" width="125" /></button></td>
+                <td><button id="button12" onclick="playTicTacToe(2)"><img id="r12" src="white.png" height="125" width="125" /></button></td>
+                <td><button id="button13" onclick="playTicTacToe(3)"><img id="r13" src="white.png" height="125" width="125" /></button></td>
+            </tr>
+            <tr>
+                <td><button id="button21" onclick="playTicTacToe(4)"><img id="r21" src="white.png" height="125" width="125" /></button></td>
+                <td><button id="button22" onclick="playTicTacToe(5)"><img id="r22" src="white.png" height="125" width="125" /></button></td>
+                <td><button id="button23" onclick="playTicTacToe(6)"><img id="r23" src="white.png" height="125" width="125" /></button></td>
+            </tr>
+            <tr>
+                <td><button id="button31" onclick="playTicTacToe(7)"><img id="r31" src="white.png" height="125" width="125" /></button></td>
+                <td><button id="button32" onclick="playTicTacToe(8)"><img id="r32" src="white.png" height="125" width="125" /></button></td>
+                <td><button id="button33" onclick="playTicTacToe(9)"><img id="r33" src="white.png" height="125" width="125" /></button></td>
+            </tr>
+        </table>
+
+        <table id="table2">
+            <tr>
+                <td><button id="button1" onclick="imageChoosing(1)"><img src="5_w_hand.png" height="125" width="125" /></button></td>
+                <td><button id="button2" onclick="imageChoosing(2)"><img src="04_wo_hand.png" height="125" width="125" /></button></td>
+                <td><button id="button3" onclick="imageChoosing(3)"><img src="03_y.png" height="125" width="125" /></button></td>
+                <td><button id="button4" onclick="imageChoosing(4)"><img src="02_y.png" height="125" width="125" /></button></td>
+                <td><button id="button5" onclick="imageChoosing(5)"><img src="01_y.png" height="125" width="125" /></button></td>
+            </tr>
+        </table>
+        <h1 id="result"></h1>
     </body>
 </html>
