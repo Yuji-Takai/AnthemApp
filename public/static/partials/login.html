@@ -155,6 +155,7 @@ limitations under the License.
           var photoURL = user.photoURL;
           var isAnonymous = user.isAnonymous;
           var uid = user.uid;
+          document.getElementById('userid').textContent = uid;
           var providerData = user.providerData;
           // [START_EXCLUDE]
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
@@ -172,6 +173,7 @@ limitations under the License.
           document.getElementById('quickstart-sign-in').textContent = 'Sign in';
           //document.getElementById('quickstart-account-details').textContent = 'null';
           // [END_EXCLUDE]
+          document.getElementById('userid').textContent = "signed out";
         }
         // [START_EXCLUDE silent]
         document.getElementById('quickstart-sign-in').disabled = false;
@@ -189,6 +191,8 @@ limitations under the License.
       initApp();
     };
   </script>
+
+
 
 
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -227,9 +231,11 @@ limitations under the License.
           &nbsp;&nbsp;&nbsp;
           <button class="mdl-button mdl-js-button mdl-button--raised" ng-click="redirectToGame()"><a href="#!/score">Play game? ;)</a></button>
 
+
           <!-- Container where we'll display the user details -->
           <div class="quickstart-user-details-container">
             Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+            <div style="visibility: hidden">User id: <span id='userid'>thing</span></div>
             <!--div>Firebase auth <code>currentUser</code> object value:</div-->
             <!--pre><code id="quickstart-account-details"></code></pre-->
             <!--pre><code id="quickstart-account-details">null</code></pre-->
