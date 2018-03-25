@@ -31,7 +31,7 @@ myApp.config(['$routeProvider',
             }).
             when('/score', {
                 templateUrl: '../static/partials/score.html',
-                controller: 'LogInController',
+                controller: 'GameController',
                 title: 'Score',
             }).
             // when('/dash', {

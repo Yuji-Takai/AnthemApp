@@ -4,6 +4,7 @@ var myControllers = angular.module("myControllers", []);
 
 myApp.controller('LogInController', function($scope, $location) {
     $scope.uid = (document.getElementById("userid")) ? document.getElementById("userid").textContent : null;
+    $scope.score = null;
     $scope.redirectToGame = function() {
         $location.path("/game");
     };
@@ -18,7 +19,6 @@ myApp.controller('GameController', function($http, $scope, $location) {
     "../static/img/white.png", "../static/img/white.png", "../static/img/white.png", "../static/img/white.png", "../static/img/white.png"];
     $scope.filled = [false, false, false, false, false, false, false, false, false];
 $scope.imageChoosing = function(num1) {
-    $scope.uid = "user0801";
     var link = "https://oopsiedaisies2018.firebaseio.com/users/" + $scope.uid + ".json";
     $http.get(link).then(function(results) {
         $scope.streak = (results.data.prevday) ? results.data.streak + 1 : 1;
@@ -99,6 +99,7 @@ $scope.playTicTacToe = function(num2) {
         document.getElementById("button31").disabled = true;
         document.getElementById("button32").disabled = true;
         document.getElementById("button33").disabled = true;
+        $scope.score = 5;
         return;
     }
     if ($scope.elements[1] == $scope.image
@@ -113,6 +114,7 @@ $scope.playTicTacToe = function(num2) {
         document.getElementById("button31").disabled = true;
         document.getElementById("button32").disabled = true;
         document.getElementById("button33").disabled = true;
+        $scope.score = 5;
         return;
     }
     if ($scope.elements[2] == $scope.image
@@ -128,6 +130,7 @@ $scope.playTicTacToe = function(num2) {
         document.getElementById("button31").disabled = true;
         document.getElementById("button32").disabled = true;
         document.getElementById("button33").disabled = true;
+        $scope.score = 5;
         return;
     }
     if ($scope.elements[3] == $scope.image
@@ -142,6 +145,7 @@ $scope.playTicTacToe = function(num2) {
             document.getElementById("button31").disabled = true;
             document.getElementById("button32").disabled = true;
             document.getElementById("button33").disabled = true;
+            $scope.score = 5;
             return;
     }
     if ($scope.elements[6] == $scope.image
@@ -156,6 +160,7 @@ $scope.playTicTacToe = function(num2) {
             document.getElementById("button31").disabled = true;
             document.getElementById("button32").disabled = true;
             document.getElementById("button33").disabled = true;
+            $scope.score = 5;
             return;
     }
     $scope.computerPlaying();
@@ -170,6 +175,7 @@ $scope.playTicTacToe = function(num2) {
         document.getElementById("button31").disabled = true;
         document.getElementById("button32").disabled = true;
         document.getElementById("button33").disabled = true;
+        $scope.score = 3;
         return;
     }
 }
@@ -217,6 +223,7 @@ $scope.computerPlaying = function() {
                 document.getElementById("button31").disabled = true;
                 document.getElementById("button32").disabled = true;
                 document.getElementById("button33").disabled = true;
+                $scope.score = 1;
     } else if ($scope.elements[1] == "../static/img/cross.png"
         && ($scope.elements[1] == $scope.elements[4] && $scope.elements[4] == $scope.elements[7])) {
                 document.getElementById("result").innerHTML = "YOU LOSE...";
@@ -229,6 +236,7 @@ $scope.computerPlaying = function() {
                 document.getElementById("button31").disabled = true;
                 document.getElementById("button32").disabled = true;
                 document.getElementById("button33").disabled = true;
+                $scope.score = 1;
     } else if ($scope.elements[2] == "../static/img/cross.png"
         && (($scope.elements[2] == $scope.elements[5] && $scope.elements[5] == $scope.elements[8])
                 || ($scope.elements[2] == $scope.elements[4] && $scope.elements[4] == $scope.elements[6]))) {
@@ -242,6 +250,7 @@ $scope.computerPlaying = function() {
             document.getElementById("button31").disabled = true;
             document.getElementById("button32").disabled = true;
             document.getElementById("button33").disabled = true;
+            $scope.score = 1;
     } else if ($scope.elements[3] == "../static/img/cross.png"
         && ($scope.elements[3] == $scope.elements[4] && $scope.elements[4] == $scope.elements[5])) {
             document.getElementById("result").innerHTML = "YOU LOSE...";
@@ -254,6 +263,7 @@ $scope.computerPlaying = function() {
             document.getElementById("button31").disabled = true;
             document.getElementById("button32").disabled = true;
             document.getElementById("button33").disabled = true;
+            $scope.score = 1;
     } else if ($scope.elements[6] == "../static/img/cross.png"
         && ($scope.elements[6] == $scope.elements[7] && $scope.elements[7] == $scope.elements[8])) {
             document.getElementById("result").innerHTML = "YOU LOSE...";
@@ -266,6 +276,7 @@ $scope.computerPlaying = function() {
             document.getElementById("button31").disabled = true;
             document.getElementById("button32").disabled = true;
             document.getElementById("button33").disabled = true;
+            $scope.score = 1;
     }
 }
 

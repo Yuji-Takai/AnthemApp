@@ -30,7 +30,7 @@ button[disabled=disabled], button:disabled img {
   }
 
   </style>
-<div>
+<div ng-if="!score">
   <h1>TicTacToe</h1>
   <p>Q1: How are you feeling about your associate experience at Anthem today?<br>
   Click the emoji corresponding to your answer and try to win the game as quickly as possible!</p>
@@ -64,5 +64,45 @@ button[disabled=disabled], button:disabled img {
       </tr>
   </table>
   <h1 id="result"></h1>
-  <button id="jumper"><a href="score.html">Next</a></button>
+  <button id="jumper"><a href="#!/score">Next</a></button>
+</div>
+
+<div ng-if="score">
+  <style>
+  h1 {text-align:center;}
+  .box {
+      width: 400px;
+      height: 100px;
+      padding: 10px;
+      background-color: #0079C2;
+      border: 1px solid #0079C2;
+      margin: auto;
+      border-radius: 5px;
+    }
+    p {
+      color: rgb(255, 255, 255);
+    }
+    #thank_you {
+      color: rgb(0, 0, 0);
+      margin-top: 20px;
+      text-align: center;
+    }
+    #heart {
+      width: 250px;
+      height: 250px;
+      margin: auto;
+    }
+  </style>
+
+  <div>
+      <h1>User's name</h1>
+      <div class = "box">
+      <p ng-if="score">Your score: {{score}}/5! {{score > 2 ? "Woohoo!" : "Almost!"}}<br>
+      Your streak: {{streak}} days in a row! Keep it up!<br>
+      Your ranking in the department: 5th</p>
+      <p id="thank_you">Thank you!!</p>
+      <div style="text-align:center;">
+      <img id="heart" src="../static/img/60_y.png" />
+      </div>
+  </div>
 </div>

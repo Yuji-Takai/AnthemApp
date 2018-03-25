@@ -1,35 +1,37 @@
-<!DOCTYPE html>
-<html>
-  <style>
-  h1 {text-align:center;}
-  .box {
-        width: 400px;
-        height: 100px;
-        padding: 10px;
-        background-color: #0079C2;
-        border: 1px solid #0079C2;
-        margin: auto;
-        border-radius: 5px;
-    }
-    p {
-        color: rgb(255, 255, 255);
-    }
-    .thank_you {
-      color: rgb(0, 0, 0);
-      margin-top: 20px;
-    }
-  </style>
-  <head>
-    <meta charset="utf-8">
-    <title>Score</title>
-  </head>
-    <body>
-        <h1>User's name</h1>
-        <div class = "box">
-        <p>Your score: 100! Woohoo!<br>
-        Your streak: 5 days in a row! Keep it up!<br>
-        Your ranking in the department: 5th</p>
-        <p id="thank_you">Thank you!!</p>
-        <img src="60_y.png" />
-    </body>
-</html>
+<style>
+h1 {text-align:center;}
+.box {
+      width: 400px;
+      height: 100px;
+      padding: 10px;
+      background-color: #0079C2;
+      border: 1px solid #0079C2;
+      margin: auto;
+      border-radius: 5px;
+  }
+  p {
+      color: rgb(255, 255, 255);
+  }
+  #thank_you {
+    color: rgb(0, 0, 0);
+    margin-top: 20px;
+    text-align: center;
+  }
+  #heart {
+    width: 250px;
+    height: 250px;
+    margin: auto;
+  }
+</style>
+
+<div>
+    <h1>User's name</h1>
+    <div class = "box">
+    <p ng-if="score">Your score: {{score}}/5! {{score > 2 ? "Woohoo!" : "Almost!"}}<br>
+    Your streak: 5 days in a row! Keep it up!<br>
+    Your ranking in the department: 5th</p>
+    <p id="thank_you">Thank you!!</p>
+    <div style="text-align:center;">
+    <img id="heart" src="../static/img/60_y.png" />
+    </div>
+</div>
