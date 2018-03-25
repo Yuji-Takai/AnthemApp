@@ -3,7 +3,7 @@
 var myControllers = angular.module("myControllers", []);
 
 myApp.controller('LogInController', function($scope, $location) {
-    $scope.uid = document.getElementById("userid");
+    $scope.uid = (document.getElementById("userid")) ? document.getElementById("userid").textContent : null;
     $scope.redirectToGame = function() {
         $location.path("/game");
     };
@@ -17,31 +17,46 @@ myApp.controller('GameController', function($http, $scope, $location) {
     $scope.elements = ["../static/img/white.png", "../static/img/white.png", "../static/img/white.png", "../static/img/white.png",
     "../static/img/white.png", "../static/img/white.png", "../static/img/white.png", "../static/img/white.png", "../static/img/white.png"];
     $scope.filled = [false, false, false, false, false, false, false, false, false];
-    console.log("g");
 $scope.imageChoosing = function(num1) {
-    console.log(num1);
-    $http.get('').then(function(results) {
+    $scope.uid = "user0801";
+    var link = "https://oopsiedaisies2018.firebaseio.com/users/" + $scope.uid + ".json";
+    $http.get(link).then(function(results) {
+        $scope.streak = (results.data.prevday) ? results.data.streak + 1 : 1;
+        results.data.streak = $scope.streak;
+        results.data.prevday = true;
+        results.data.q1 = num1;
+        $http.put(link, results.data).then(function(results) {
+        }).
+        catch(function(error) {
+        });
     }).
     catch(function(error) {
+        var data = {};
+        data.streak = 1;
+        data.prevday = true;
+        data.q1 = num1;
+        $http.put(link, data).then(function(results) {
+        }).
+        catch(function(error) {
+        });
     });
-
-
     if (num1 == 1) {
-        $scope.image = "../static/img/5_w_hand.png";
+        $scope.image = "../static/img/01_y.png";
     } else if (num1 == 2) {
-        $scope.image = "../static/img/04_wo_hand.png";
+        $scope.image = "../static/img/02_y.png";
     } else if (num1 == 3) {
         $scope.image = "../static/img/03_y.png";
     } else if (num1 == 4) {
-        $scope.image = "../static/img/02_y.png";
+        $scope.image = "../static/img/04_wo_hand.png";
     } else {
-        $scope.image = "../static/img/01_y.png";
+        $scope.image = "../static/img/5_w_hand.png";
     }
-    document.getElementById("button1").disabled = true;
-    document.getElementById("button2").disabled = true;
-    document.getElementById("button3").disabled = true;
-    document.getElementById("button4").disabled = true;
-    document.getElementById("button5").disabled = true;
+
+    for (var i = 1; i < 6; i++) {
+        if (i != num1) {
+            document.getElementById("button" + i).disabled = true;
+        }
+    }
 }
 
 $scope.playTicTacToe = function(num2) {

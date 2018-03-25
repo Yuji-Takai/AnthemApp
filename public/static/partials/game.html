@@ -25,19 +25,22 @@
     position: auto;
   }
 
+button[disabled=disabled], button:disabled img {
+    opacity: 0.2;
+  }
+
   </style>
-    <!-- <script src="playTicTacToe.js"></script> -->
 <div>
   <h1>TicTacToe</h1>
-  <p>{{uid}}Q1: How are you feeling about your associate experience at Anthem today?<br>
+  <p>Q1: How are you feeling about your associate experience at Anthem today?<br>
   Click the emoji corresponding to your answer and try to win the game as quickly as possible!</p>
   <table id="table2" align="center">
       <tr>
-          <td><button id="button1" ng-click="imageChoosing(1)"><img src="../static/img/5_w_hand.png" height="125" width="125" /></button></td>
-          <td><button id="button2" ng-click="imageChoosing(2)"><img src="../static/img/04_wo_hand.png" height="125" width="125" /></button></td>
+          <td><button id="button1" ng-click="imageChoosing(1)"><img src="../static/img/01_y.png" height="125" width="125" /></button></td>
+          <td><button id="button2" ng-click="imageChoosing(2)"><img src="../static/img/02_y.png" height="125" width="125" /></button></td>
           <td><button id="button3" ng-click="imageChoosing(3)"><img src="../static/img/03_y.png" height="125" width="125" /></button></td>
-          <td><button id="button4" ng-click="imageChoosing(4)"><img src="../static/img/02_y.png" height="125" width="125" /></button></td>
-          <td><button id="button5" ng-click="imageChoosing(5)"><img src="../static/img/01_y.png" height="125" width="125" /></button></td>
+          <td><button id="button4" ng-click="imageChoosing(4)"><img src="../static/img/04_wo_hand.png" height="125" width="125" /></button></td>
+          <td><button id="button5" ng-click="imageChoosing(5)"><img src="../static/img/5_w_hand.png" height="125" width="125" /></button></td>
       </tr>
   </table>
 
