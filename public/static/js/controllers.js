@@ -2,10 +2,11 @@
 
 var myControllers = angular.module("myControllers", []);
 
-myApp.controller('LogInController', function($scope, $location) {
-    $scope.uid = (document.getElementById("userid")) ? document.getElementById("userid").textContent : null;
+myApp.controller('LogInController', function($rootScope, $scope, $location) {
+    $rootScope.uid = (document.getElementById("userid")) ? document.getElementById("userid").textContent : null;
     $scope.score = null;
     $scope.redirectToGame = function() {
+        $rootScope.uid = document.getElementById("userid").textContent;
         $location.path("/game");
     };
 });
@@ -13,13 +14,14 @@ myApp.controller('LogInController', function($scope, $location) {
 myApp.controller('LogOutController', function($scope, $location) {
 });
 
-myApp.controller('GameController', function($http, $scope, $location) {
+myApp.controller('GameController', function($rootScope, $http, $scope, $location) {
     $scope.image= "nothing";
     $scope.elements = ["../static/img/white.png", "../static/img/white.png", "../static/img/white.png", "../static/img/white.png",
     "../static/img/white.png", "../static/img/white.png", "../static/img/white.png", "../static/img/white.png", "../static/img/white.png"];
     $scope.filled = [false, false, false, false, false, false, false, false, false];
 $scope.imageChoosing = function(num1) {
-    var link = "https://oopsiedaisies2018.firebaseio.com/users/" + $scope.uid + ".json";
+    console.log($rootScope.uid);
+    var link = "https://oopsiedaisies2018.firebaseio.com/users/" + $rootScope.uid + ".json";
     $http.get(link).then(function(results) {
         $scope.streak = (results.data.prevday) ? results.data.streak + 1 : 1;
         results.data.streak = $scope.streak;
@@ -35,6 +37,7 @@ $scope.imageChoosing = function(num1) {
         data.streak = 1;
         data.prevday = true;
         data.q1 = num1;
+        $scope.streak = data.streak;
         $http.put(link, data).then(function(results) {
         }).
         catch(function(error) {

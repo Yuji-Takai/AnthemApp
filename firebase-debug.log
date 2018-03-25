@@ -39,3 +39,44 @@
 [info] i  hosting: Serving hosting files from: public
 [info] ✔  hosting: Local server: http://localhost:5000
 
+[debug] [2018-03-25T07:43:56.645Z] ----------------------------------------------------------------------
+[debug] [2018-03-25T07:43:56.648Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Youna\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-03-25T07:43:56.648Z] CLI Version:   3.17.7
+[debug] [2018-03-25T07:43:56.648Z] Platform:      win32
+[debug] [2018-03-25T07:43:56.648Z] Node Version:  v8.10.0
+[debug] [2018-03-25T07:43:56.649Z] Time:          Sun Mar 25 2018 03:43:56 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-03-25T07:43:56.649Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-03-25T07:43:56.664Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-03-25T07:43:56.665Z] > authorizing via signed-in user
+[debug] [2018-03-25T07:43:56.668Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-03-25T07:43:56.668Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/mSv390CjokP4-AkQm4hZVZXzC_UHy18Fb709bgpw7X0',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sun Mar 25 2018 03:43:56 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-03-25T07:43:56.783Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-25T07:43:56.795Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/oopsiedaisies2018  
+  
+ Sun Mar 25 2018 03:43:56 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-03-25T07:43:57.079Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-25T07:43:57.081Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/oopsiedaisies2018/tokens  
+  
+ Sun Mar 25 2018 03:43:57 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-03-25T07:43:57.352Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-25T07:43:57.365Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/oopsiedaisies2018  
+  
+ Sun Mar 25 2018 03:43:57 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-03-25T07:43:57.586Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Youna\Documents\spring2018\hackgsu\AnthemApp'...
+[info] 
+[debug] [2018-03-25T07:43:57.596Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/581092400806/clients/_:getWebAppConfig  
+  
+ Sun Mar 25 2018 03:43:57 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-03-25T07:43:57.946Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
