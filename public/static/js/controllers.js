@@ -2,42 +2,8 @@
 
 var myControllers = angular.module("myControllers", []);
 
-myApp.controller('RegisterController', function($scope, $location, $http, $log) {
-    $scope.registersuccess = false;
-    $scope.submitted = false;
-    $scope.registerfail = false;
-    $scope.registerfailmessage = '';
-
-    $scope.submitForm = function(isValid, user) {
-        $scope.submitted = true;
-        if (isValid) {
-            $scope.registerUser(user);
-        }
-    };
-    $scope.registerUser = function(user) {
-        if (angular.isUndefined(user)) {
-            // should not occur, must fill all fields
-        } else {
-            if (user.hasbreezecard == "false") {
-                user.breezecardnumber = null;
-            }
-
-            $http.post('/api/signup/', user).
-                then(function(results) {
-                    $scope.registersuccess = true;
-                    $scope.registerfail = false;
-                }).
-                catch(function(error) {
-                    $scope.registerfail = true;
-                    $scope.registerfailmessage = error.data;
-                    user.password = undefined;
-                    user.cpassword = undefined;
-                });
-        }
-    };
-});
-
 myApp.controller('LogInController', function($scope, $location) {
+    $scope.uid = document.getElementById("userid");
     $scope.redirectToGame = function() {
         $location.path("/game");
     };
@@ -46,7 +12,7 @@ myApp.controller('LogInController', function($scope, $location) {
 myApp.controller('LogOutController', function($scope, $location) {
 });
 
-myApp.controller('GameController', function($scope, $location) {
+myApp.controller('GameController', function($http, $scope, $location) {
     $scope.image= "nothing";
     $scope.elements = ["../static/img/white.png", "../static/img/white.png", "../static/img/white.png", "../static/img/white.png",
     "../static/img/white.png", "../static/img/white.png", "../static/img/white.png", "../static/img/white.png", "../static/img/white.png"];
@@ -54,15 +20,9 @@ myApp.controller('GameController', function($scope, $location) {
     console.log("g");
 $scope.imageChoosing = function(num1) {
     console.log(num1);
-    $http.get('', user).then(function(results) {
-        $scope.registersuccess = true;
-        $scope.registerfail = false;
+    $http.get('').then(function(results) {
     }).
-        catch(function(error) {
-        $scope.registerfail = true;
-        $scope.registerfailmessage = error.data;
-        user.password = undefined;
-        user.cpassword = undefined;
+    catch(function(error) {
     });
 
 

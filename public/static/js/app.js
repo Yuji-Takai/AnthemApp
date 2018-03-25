@@ -24,11 +24,6 @@ myApp.config(['$routeProvider',
                 // controller: 'LogInController',
                 title: 'Sign In',
             }).
-            when('/signup', {
-                templateUrl: '../static/partials/login.html',
-                controller: 'RegisterController',
-                title: 'Create an Account',
-            }).
             when('/game', {
                 templateUrl: '../static/partials/game.html',
                 controller: 'GameController',
