@@ -1,19 +1,24 @@
-<!DOCTYPE html>
-<html>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
   <style>
   h1, p {
     text-align:center;
   }
   h1 {
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-family: "Open Sans", Helvetica, sans-serif;
   }
   .table, td {
     border: 6px solid rgb(0,0,0);
     border-collapse: collapse;
   }
   .table {
-    width: 400;
-    height: 400;
+    width: 377;
+    height: 377;
+    background-color: rgb(0,0,0);
+  }
+
+  .table2 {
+    width: 377;
+    height: 125;
     background-color: rgb(0,0,0);
   }
   .jumper {
@@ -21,45 +26,40 @@
   }
 
   </style>
-  <head>
-    <meta charset="utf-8">
-    <title>Game</title>
-  </head>
-    <script src="playTicTacToe.js"></script>
-    <body>
-        <h1>TicTacToe</h1>
-        <p>Q1: How are you feeling about your associate experience at Anthem today?<br>
-        Click the emoji corresponding to your answer and try to win the game as quickly as possible!</p>
-        <table id="table2" align="center">
-            <tr>
-                <td><button id="button1" onclick="imageChoosing(1)"><img src="5_w_hand.png" height="125" width="125" /></button></td>
-                <td><button id="button2" onclick="imageChoosing(2)"><img src="04_wo_hand.png" height="125" width="125" /></button></td>
-                <td><button id="button3" onclick="imageChoosing(3)"><img src="03_y.png" height="125" width="125" /></button></td>
-                <td><button id="button4" onclick="imageChoosing(4)"><img src="02_y.png" height="125" width="125" /></button></td>
-                <td><button id="button5" onclick="imageChoosing(5)"><img src="01_y.png" height="125" width="125" /></button></td>
-            </tr>
-        </table>
+    <!-- <script src="playTicTacToe.js"></script> -->
+<div>
+  <h1>TicTacToe</h1>
+  <p>Q1: How are you feeling about your associate experience at Anthem today?<br>
+  Click the emoji corresponding to your answer and try to win the game as quickly as possible!</p>
+  <table id="table2" align="center">
+      <tr>
+          <td><button id="button1" ng-click="imageChoosing(1)"><img src="../static/img/5_w_hand.png" height="125" width="125" /></button></td>
+          <td><button id="button2" ng-click="imageChoosing(2)"><img src="../static/img/04_wo_hand.png" height="125" width="125" /></button></td>
+          <td><button id="button3" ng-click="imageChoosing(3)"><img src="../static/img/03_y.png" height="125" width="125" /></button></td>
+          <td><button id="button4" ng-click="imageChoosing(4)"><img src="../static/img/02_y.png" height="125" width="125" /></button></td>
+          <td><button id="button5" ng-click="imageChoosing(5)"><img src="../static/img/01_y.png" height="125" width="125" /></button></td>
+      </tr>
+  </table>
 
-        <canvas id="white space" width="400" height="30"></canvas>
+  <canvas id="white space" width="400" height="30"></canvas>
 
-        <table id="table" align="center">
-            <tr>
-                <td><button id="button11" onclick="playTicTacToe(1)"><img id="r11" src="white.png" height="125" width="125" /></button></td>
-                <td><button id="button12" onclick="playTicTacToe(2)"><img id="r12" src="white.png" height="125" width="125" /></button></td>
-                <td><button id="button13" onclick="playTicTacToe(3)"><img id="r13" src="white.png" height="125" width="125" /></button></td>
-            </tr>
-            <tr>
-                <td><button id="button21" onclick="playTicTacToe(4)"><img id="r21" src="white.png" height="125" width="125" /></button></td>
-                <td><button id="button22" onclick="playTicTacToe(5)"><img id="r22" src="white.png" height="125" width="125" /></button></td>
-                <td><button id="button23" onclick="playTicTacToe(6)"><img id="r23" src="white.png" height="125" width="125" /></button></td>
-            </tr>
-            <tr>
-                <td><button id="button31" onclick="playTicTacToe(7)"><img id="r31" src="white.png" height="125" width="125" /></button></td>
-                <td><button id="button32" onclick="playTicTacToe(8)"><img id="r32" src="white.png" height="125" width="125" /></button></td>
-                <td><button id="button33" onclick="playTicTacToe(9)"><img id="r33" src="white.png" height="125" width="125" /></button></td>
-            </tr>
-        </table>
-        <h1 id="result"></h1>
-        <button id="jumper"><a href="score.html">Next</a></button>
-    </body>
-</html>
+  <table id="table" align="center">
+      <tr>
+          <td><button id="button11" ng-click="playTicTacToe(1)"><img id="r11" src="../static/img/white.png" height="125" width="125" /></button></td>
+          <td><button id="button12" ng-click="playTicTacToe(2)"><img id="r12" src="../static/img/white.png" height="125" width="125" /></button></td>
+          <td><button id="button13" ng-click="playTicTacToe(3)"><img id="r13" src="../static/img/white.png" height="125" width="125" /></button></td>
+      </tr>
+      <tr>
+          <td><button id="button21" ng-click="playTicTacToe(4)"><img id="r21" src="../static/img/white.png" height="125" width="125" /></button></td>
+          <td><button id="button22" ng-click="playTicTacToe(5)"><img id="r22" src="../static/img/white.png" height="125" width="125" /></button></td>
+          <td><button id="button23" ng-click="playTicTacToe(6)"><img id="r23" src="../static/img/white.png" height="125" width="125" /></button></td>
+      </tr>
+      <tr>
+          <td><button id="button31" ng-click="playTicTacToe(7)"><img id="r31" src="../static/img/white.png" height="125" width="125" /></button></td>
+          <td><button id="button32" ng-click="playTicTacToe(8)"><img id="r32" src="../static/img/white.png" height="125" width="125" /></button></td>
+          <td><button id="button33" ng-click="playTicTacToe(9)"><img id="r33" src="../static/img/white.png" height="125" width="125" /></button></td>
+      </tr>
+  </table>
+  <h1 id="result"></h1>
+  <button id="jumper"><a href="score.html">Next</a></button>
+</div>

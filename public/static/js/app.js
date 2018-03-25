@@ -29,10 +29,15 @@ myApp.config(['$routeProvider',
                 controller: 'RegisterController',
                 title: 'Create an Account',
             }).
+            when('/game', {
+                templateUrl: '../static/partials/game.html',
+                controller: 'GameController',
+                title: 'Tictactoe',
+            }).
             when('/score', {
                 templateUrl: '../static/partials/score.html',
                 controller: 'LogInController',
-                title: 'Game?',
+                title: 'Score',
             }).
             // when('/dash', {
             //     templateUrl: '../static/partials/dash.html',
